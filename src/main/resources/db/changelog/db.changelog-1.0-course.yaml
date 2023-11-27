@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id : db.changelog-1.1
+      author : d.kucherenko
+      changes:
+        - createTable:
+            tableName: Course
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: currency
+                  type: NVARCHAR(256)
+              - column:
+                  name: val
+                  type: DECIMAL
+              - column:
+                  name: local_date
+                  type: DATE
+        - createTable:
+            tableName: financial_operation
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description_operation
+                  type: NVARCHAR(256)
+              - column:
+                  name: sum_operation
+                  type: DECIMAL
+              - column:
+                  name: date_operation
+                  type: DATE
